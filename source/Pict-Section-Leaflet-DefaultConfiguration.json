@@ -1,0 +1,23 @@
+{
+	"RenderOnLoad": true,
+
+	"DefaultRenderable": "Leaflet-Wrap",
+	"DefaultDestinationAddress": "#Leaflet-Container-Div",
+
+	"LeafletDestinationAddress": "#Leaflet-Container-Div",
+
+	"Templates": [
+		{
+			"Hash": "Leaflet-Container",
+			"Template": "<!-- Leaflet Map Rendering Soon -->"
+		}
+	],
+
+	"Renderables": [
+		{
+			"RenderableHash": "Leaflet-Wrap",
+			"TemplateHash": "Leaflet-Container",
+			"DestinationAddress": "#Leaflet-Container-Div"
+		}
+	]
+}
