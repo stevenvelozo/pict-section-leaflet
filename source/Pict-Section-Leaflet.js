@@ -24,21 +24,21 @@ class PictSectionLeaflet extends libPictViewClass
 	{
 		if (typeof (pLeafletPrototype) != 'undefined')
 		{
-			this._tuiGridPrototype = pLeafletPrototype;
+			this._leafletPrototype = pLeafletPrototype;
 		}
 		else
 		{
 			this.log.trace(`PICT-Leaflet No Leaflet Prototype defined or explicitly set; looking for it in the window object.`);
 			if (typeof (window) != 'undefined')
 			{
-				if (typeof (window.leaflet) != 'undefined')
+				if (typeof (window.L) != 'undefined')
 				{
-					this.log.trace(`PICT-Leaflet Found Leaflet Prototype in window.tuiGrid.`);
-					this.connectLeafletPrototype(window.tui.Grid);
+					this.log.trace(`PICT-Leaflet Found Leaflet Prototype in window.L.`);
+					this.connectLeafletPrototype(window.L);
 				}
 				else
 				{
-					this.log.error(`PICT-Leaflet No Leaflet Prototype found in window.tuiGrid.`);
+					this.log.error(`PICT-Leaflet No Leaflet Prototype found in window.L.`);
 					return false;
 				}
 			}
@@ -47,17 +47,6 @@ class PictSectionLeaflet extends libPictViewClass
 				this.log.error(`PICT-Leaflet No Leaflet Prototype found in window.leaflet -- window object unavailable.  The map will not function.`);
 				return false;
 			}
-		}
-	}
-
-	changeHandler(pChangeData)
-	{
-		let tmpSolverNecessary = false;
-
-
-		if (tmpSolverNecessary)
-		{
-			this.services.PictApplication.solve();
 		}
 	}
 
@@ -87,10 +76,27 @@ class PictSectionLeaflet extends libPictViewClass
 		}
 
 		let libLeaflet = this._leafletPrototype;
-		this.leaflet = new libLeaflet();
+		// Note the leaflet destination address is not a browser address but just the text of the ID
+		this.leaflet = libLeaflet.map(this.options.LeafletDestinationAddress).setView([51.505, -0.09], 13);
+
+		this.onAfterInitializeLeaflet();
 
 		return true;
 	}
+
+	onAfterInitializeLeaflet()
+	{
+		let libLeaflet = this._leafletPrototype;
+libLeaflet.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+}).addTo( this.leaflet );
+		// libLeaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+		// 	{
+		// 		maxZoom: 19,
+		// 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		// 	}).addTo(this.leaflet);
+	}
+
 }
 
 module.exports = PictSectionLeaflet;

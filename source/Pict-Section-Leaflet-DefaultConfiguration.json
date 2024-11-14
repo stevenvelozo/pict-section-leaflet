@@ -2,14 +2,14 @@
 	"RenderOnLoad": true,
 
 	"DefaultRenderable": "Leaflet-Wrap",
-	"DefaultDestinationAddress": "#Leaflet-Container-Div",
+	"DefaultDestinationAddress": "#Pict-Leaflet-Container-Div",
 
-	"LeafletDestinationAddress": "#Leaflet-Container-Div",
+	"LeafletDestinationAddress": "Leaflet-Map-Container-Div",
 
 	"Templates": [
 		{
 			"Hash": "Leaflet-Container",
-			"Template": "<!-- Leaflet Map Rendering Soon -->"
+			"Template": "<div id=\"Leaflet-Map-Container-Div\"></div>"
 		}
 	],
 
@@ -17,7 +17,7 @@
 		{
 			"RenderableHash": "Leaflet-Wrap",
 			"TemplateHash": "Leaflet-Container",
-			"DestinationAddress": "#Leaflet-Container-Div"
+			"DestinationAddress": "#Pict-Leaflet-Container-Div"
 		}
 	]
 }

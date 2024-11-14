@@ -1,0 +1,12 @@
+{
+	"Name": "A Simple Postcard Application",
+	"Hash": "Postcard",
+
+	"MainViewportViewIdentifier": "PostcardNavigation",
+
+	"pict_configuration":
+		{
+			"Product": "Postkard-Pict-Application",
+			"CustomInputMacros": {"CustomPictSettingsProperty": "ThisCustomProperty=\"CustomValue\""}
+		}
+}

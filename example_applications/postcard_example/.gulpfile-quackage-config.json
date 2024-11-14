@@ -1,0 +1,7 @@
+{
+    "EntrypointInputSourceFile": "/Users/steven/Code/retold/modules/pict/pict-section-leaflet/example_applications/postcard_example/Pict-Application-Postcard.js",
+    "LibraryObjectName": "PostcardApplication",
+    "LibraryOutputFolder": "/Users/steven/Code/retold/modules/pict/pict-section-leaflet/example_applications/postcard_example/dist/",
+    "LibraryUniminifiedFileName": "postcard_application.js",
+    "LibraryMinifiedFileName": "postcard_application.min.js"
+}
