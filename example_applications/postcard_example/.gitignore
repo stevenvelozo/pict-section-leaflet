@@ -1,3 +1,34 @@
+# Thanks, Apple.
+.DS_Store
+.idea
+
+*.log
+
+.headlight.config.json
+.mysql.config.json
+
+package-lock.json
+
+# Dependencies
+node_modules/
+*/node_modules/
+.terraform
+
+# Generated docker compose file for running the environment locally
+generated-docker-compose.yml
+environment-config.yml
+
+# Generated folders
+serve/
+tmp/
+dist/
+.nyc_output
+coverage
+
+# Auto-generated build files
 .babelrc
 .browserslistrc
-dist/
+.browserslistrc-BACKUP
+.gulpfile-quackage.js
+.gulpfile-quackage-config.json
+.package.json.quackage.bak
