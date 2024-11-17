@@ -70,7 +70,9 @@ class PictSectionLeaflet extends libPictViewClass
 
 		let libLeaflet = this._leafletPrototype;
 		// Note the leaflet destination address is not a browser address but just the text of the ID
-		this.leaflet = libLeaflet.map(this.options.LeafletDestinationAddress).setView(this.leafletInitialCenter, this.leafletInitialZoom);
+		this.leaflet = libLeaflet.map(this.options.LeafletDestinationAddress);
+
+		this.leaflet.setView(this.leafletInitialCenter, this.leafletInitialZoom);
 
 		this.onAfterInitializeLeaflet();
 
