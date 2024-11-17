@@ -52,22 +52,12 @@ class PictSectionLeaflet extends libPictViewClass
 
 	onAfterRender()
 	{
-		if (!this.initialRenderComplete)
+		if (this.leaflet)
 		{
-			this.onAfterInitialRender();
-			this.initialRenderComplete = true;
+			delete this.leaflet;
 		}
-	}
-
-	onAfterInitialRender()
-	{
-		// This is where we wire up and initialize the leaflet control -- the initial render has put the placeholder content in place.
-		// Check for a leaflet prototype, and find it in the window object it if it doesn't exist
-		if (!this._leafletPrototype)
-		{
-			this.connectLeafletPrototype();
-		}
-		// This is where we wire up and initialize the leaflet control
+		// This is where we wire up and initialize the leaflet control.
+		this.connectLeafletPrototype();
 		if (this.leaflet)
 		{
 			// The map is already initialized.
@@ -86,17 +76,8 @@ class PictSectionLeaflet extends libPictViewClass
 
 	onAfterInitializeLeaflet()
 	{
-		let libLeaflet = this._leafletPrototype;
-libLeaflet.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-}).addTo( this.leaflet );
-		// libLeaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-		// 	{
-		// 		maxZoom: 19,
-		// 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-		// 	}).addTo(this.leaflet);
-	}
 
+	}
 }
 
 module.exports = PictSectionLeaflet;

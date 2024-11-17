@@ -16,6 +16,12 @@ class PostcardApplication extends libPictApplication
 		this.pict.addView('PostcardMainApplication', {}, libMainApplicationView);
 		this.pict.addView('PostcardMap', {}, libMapView);
 	}
+
+	onAfterRender()
+	{
+		super.onAfterRender();
+		this.pict.views.PostcardMainApplication.render();
+	}
 };
 
 module.exports = PostcardApplication
