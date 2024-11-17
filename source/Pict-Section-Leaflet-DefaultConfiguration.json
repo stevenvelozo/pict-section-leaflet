@@ -5,6 +5,8 @@
 	"DefaultDestinationAddress": "#Pict-Leaflet-Container-Div",
 
 	"LeafletDestinationAddress": "Leaflet-Map-Container-Div",
+	"LeafletInitialZoom": 13,
+	"LeafletInitialCenter": [ 21.315603, -157.858093 ],
 
 	"Templates": [
 		{

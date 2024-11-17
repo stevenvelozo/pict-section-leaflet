@@ -9,6 +9,9 @@ class PictSectionLeaflet extends libPictViewClass
 		super(pFable, tmpOptions, pServiceHash);
 
 		this.initialRenderComplete = false;
+
+		this.leafletInitialCenter = this.options.LeafletInitialCenter;
+		this.leafletInitialZoom = this.options.LeafletInitialZoom;
 	}
 
 	onBeforeInitialize()
@@ -67,7 +70,7 @@ class PictSectionLeaflet extends libPictViewClass
 
 		let libLeaflet = this._leafletPrototype;
 		// Note the leaflet destination address is not a browser address but just the text of the ID
-		this.leaflet = libLeaflet.map(this.options.LeafletDestinationAddress).setView([51.505, -0.09], 13);
+		this.leaflet = libLeaflet.map(this.options.LeafletDestinationAddress).setView(this.leafletInitialCenter, this.leafletInitialZoom);
 
 		this.onAfterInitializeLeaflet();
 

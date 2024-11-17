@@ -1,6 +1,6 @@
 {
     "name": "pict-section-leaflet",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Pict Leaflet Section",
     "main": "source/Pict-Section-Leaflet.js",
     "scripts": {
