@@ -53,8 +53,9 @@ class PictSectionLeaflet extends libPictViewClass
 		}
 	}
 
-	onAfterRender()
+	onAfterRender(pRenderable)
 	{
+		super.onAfterRender(pRenderable);
 		if (this.leaflet)
 		{
 			delete this.leaflet;
